@@ -1,0 +1,29 @@
+.page-box {
+    border: 1px solid #8e8e8e;
+    padding: 3em;
+    margin: 3em auto;
+    padding: 3em;
+    margin: 3em auto;
+    border: 1px solid #dedede;     
+    box-shadow: 1px 2px 5px rgba(0,0,0,.1);
+    text-align: justify;
+    h1 {
+        margin: 0 0 1em;
+    }
+    h2 {
+        margin: 2em 0 .3em;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    p {
+        font-size: 1.2em;   
+    }
+    li {
+        font-size: 1.2em;
+        margin-top: .2em;
+    }
+    ol {
+        list-style-position: inside;
+        padding: 0;
+    }
+}

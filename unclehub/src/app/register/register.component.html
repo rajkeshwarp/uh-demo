@@ -1,0 +1,62 @@
+
+<form class="register-form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input id="firstname" name="firstname" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input id="lastname" name="lastname" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label class="radio-inline"><input type="radio" name="optradio" id="female">Female</label>
+            <label class="radio-inline"><input type="radio" name="optradio" id="male">Male</label>
+            <label class="radio-inline"><input type="radio" name="optradio" id="unspecified">Rather not say</label>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" class="form-control" type="email">
+                <span ng-show="unclehub.email.$error.email">Not a valid email address</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" class="form-control" type="password">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input id="confirm-password" name="confirm-password" class="form-control" type="password">
+
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" class="form-control" type="text">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="col-md-12" id="error-message">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label class="checkbox-inline"><input type="checkbox" value="">
+                I want to receive UncleHub Finds, an email newsletter of fresh trends and editors' picks.
+            </label>
+        </div>
+
+        <div class="col-md-6">
+          <button class="btn btn-primary btn-full btn-register" type="button">Register</button>
+        </div>
+    </div>
+    <small class="register-terms">
+        By clicking Register, you agree to UncleHub's 
+        <a>Terms of Use</a> and <a>Privacy Policy</a>.
+        UncleHub may send you communications; you may change your preferences in your account settings.
+    </small>
+</form>

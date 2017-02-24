@@ -1,0 +1,33 @@
+.btn {
+	font-size: 1em;
+	&.btn-full {
+		display: block;
+		width: 100%;
+	}
+	&.btn-gift {
+		i {
+			font-size: 1.3em;
+			color: #337AB7;
+			display: inline-block;
+			margin: 0 .4em 0;
+		}
+	}
+	&.btn-register {
+		margin: .5em 0;
+	}
+}
+.btn-categories {
+	border: 2px solid;
+	color: #fff;
+	width: 100%;
+	&:hover,
+	&:focus {
+		color: #f9f9f9;
+	}
+	&.active {
+		background-image: none;
+		outline: 0;
+		-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+		box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+	}
+}

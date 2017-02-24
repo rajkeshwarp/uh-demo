@@ -1,0 +1,42 @@
+
+.post-it-link {
+    background: none !important;
+    border: none;
+    padding:7!important;
+    font: inherit;
+    border-bottom:0px solid #444;
+    color:#ffffff;
+    cursor:pointer;
+}
+
+.modal-header {
+    display: flex;
+
+    h4 {
+        flex: 1;
+        justify-content: flex-start;
+    }
+
+    button {
+        justify-content: flex-end;
+    }
+}
+
+.modal-body {
+    position: relative;
+
+    .close {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.list-links {
+    &__item {
+        a:hover {
+            cursor: pointer;
+        }
+    }
+}

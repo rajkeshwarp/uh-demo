@@ -1,0 +1,83 @@
+<div class="wrapper-modal-login">
+    <div class="container-modal-login">
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="title">Title of the product</label>
+                        <input type="text" name="title" class="form-control" id="post-title" value="" placeholder="Insert the title of the product">
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Please insert the link</label>
+                        <input type="url" name="link" class="form-control" id="link" value="" placeholder="Insert the product link">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="">Category</label>
+                                <select name="category" class="form-control" id="category">
+                                    <option value="0">Choose a category</option>
+                                    <option value="Events &amp; Activities">Events &amp; Activities </option>
+                                    <option value="Beauty &amp; Spas">Beauty &amp; Spas </option>
+                                    <option value="Food &amp; Drink">Food &amp; Drink </option>
+                                    <option value="Electronic &amp; automotive">Electronic &amp; automotive</option>
+                                    <option value="Health &amp; Fitness">Health &amp; Fitness </option>
+                                    <option value="Travel &amp; others">Travel &amp; others </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="">Quantity</label>
+                                <select class="form-control" name="quantity" id="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="others">others</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Your asking price</label>
+                                            <input id="asking-price" class="form-control" type="text" placeholder="Price">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Original Price</label>
+                                            <input id="original-price" type="text" class="form-control" placeholder="Original price">
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div id="div-description" class="form-group">
+                        <a href="" ng-click="showDescription();">(Optional) Add Description</a>
+                    </div>
+                    <div id="div-imagelink" class="form-group">
+                        Choose an Image Icon<br>
+                        <a><img src="assets/img/hotel.png" height="60px"></a>
+                        <a><img src="assets/img/travel.jpg" height="60px"></a>
+                        <a><img src="assets/img/electric.png" height="60px"></a>
+                        <a><img src="assets/img/home-service.jpg" height="60px"></a>
+                        <a><img src="assets/img/product.png" height="60px"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/img/loader.gif" style="display:none">
+                    <div id="preview-container"></div>
+                </div>
+            </div>
+        </form>
+        <div style="color:#005555">
+          <p style="color:#55aaaa;align:center">
+            If you did not yet registered, please register first. 
+            If you already registered, proceed to post it.</p>
+        </div>
+    </div>
+</div>

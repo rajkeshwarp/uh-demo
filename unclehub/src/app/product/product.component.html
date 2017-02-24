@@ -1,0 +1,374 @@
+<article class="container deal-page">
+      <div id="deal-container" class="deal-container">
+          
+          <div ng-controller="productController" class="row">
+              <div class="col-md-8">
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h2 ng-if="deal.category != 0" ng-bind="deal.category"></h2>
+                          <h2 ng-if="deal.category == 0">Product</h2>
+                          <div class="wrapper-post-product-page">
+                              <div class="post-card-now" style="display:block;">
+                                  <a class="home-card post-card" ng-click="transferToProductPage(deal, 'product.html')">
+                                      <div class="image-area" style="background-image:url(assets/img/product.png)"></div>
+                                      <div class="content-area">
+                                          <h1 ng-bind="deal.title"></h1>
+                                          <div class="description" ng-bind="deal.description"></div>
+                                          <div class="price">
+                                              <div class="clearfix original-price">
+                                                  <span class="price-label">Original Price</span>    <span class="price">$<span ng-bind="deal.original_price"></span></span>
+                                              </div>
+                                              <div class="clearfix asking-price">
+                                                  <span class="price-label">Asking Price</span>     <span class="price">$<span ng-bind="deal.asking_price"></span></span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="offers">
+                      <ul class="nav nav-tabs">
+                          <li class="active"><a data-toggle="tab" href="#vendors-offer">Vendor's offer</a></li>
+                          <li><a data-toggle="tab" href="#buyers-offer">Buyer's offer</a></li>
+                      </ul>
+                      <div class="tab-content">
+                          <div id="vendors-offer" class="tab-pane fade in active">
+                                <ul id="offer-lists" class="deal-options">
+                                  <li>
+                                  <input id="deal-option-1" type="radio" name="deal-option" checked value="1">
+                                  <label for="deal-option-1">
+                                      <h3>Vendor's offer</h3>
+                                      <div>
+                                      <div class="breakout-item">
+                                          <div class="breakout-message">
+                                          Proposed a deal for
+                                          </div>
+                                          <div class="breakout-pricing">
+                                            $<span>23</span>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="clearfix">
+                                          <h4><span class="by">posted by</span>Vendor A</h4>
+                                          <div class="people-interested pull-right"><strong>45</strong> people interested <button type="button" class="btn-like-deal" href=""></button></div>
+                                      </div>
+                                  </label>
+                                  </li>
+                                  <li>
+                                  <input id="deal-option-2" type="radio" name="deal-option" value="2">
+                                  <label for="deal-option-2">
+                                      <h3>Vendor's offer</h3>
+                                      <div>
+                                      <div class="breakout-item">
+                                          <div class="breakout-message">
+                                          Proposed a deal for
+                                          </div>
+                                          <div class="breakout-pricing">
+                                            $<span>12</span>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      <div class="clearfix">
+                                          <small class="offer-option">Free Warranty and Free Shipping</small>
+                                          <h4><span class="by">posted by</span>Vendor B</h4>
+                                          <div class="people-interested pull-right"><strong>23</strong> people interested <button type="button" class="btn-like-deal" href=""></button></div>
+                                      </div>
+                                  </label>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div id="buyers-offer" class="tab-pane fade in">
+                                <ul id="offer-lists" class="deal-options">
+                                  <li>
+                                          <h3>Buyer's offer</h3>
+                                          <div>
+                                              <div class="breakout-item">
+                                                  <div class="breakout-message">
+                                                  Asking price
+                                                  </div>
+                                                  <div class="breakout-pricing">
+                                                    $<span>12</span>
+                                                  </div>
+                                              </div>
+                                              <div class="breakout-item">
+                                                  <div class="breakout-message">
+                                                  Quantity
+                                                  </div>
+                                                  <div class="breakout-quantity">
+                                                      1
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="clearfix">
+                                              <h4><span class="by">posted by</span>Buyer A</h4>
+                                              <div class="people-interested pull-right">
+                                                      <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
+                                                      <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
+                                              </div>
+                                          </div>
+                                  </li>
+                                  <li>
+                                          <h3>Buyer's offer</h3>
+                                          <div>
+                                              <div class="breakout-item">
+                                                  <div class="breakout-message">
+                                                  Asking price
+                                                  </div>
+                                                  <div class="breakout-pricing">
+                                                  $<span ng-bind="((deal.original_price) - (deal.original_price/100*20)| number:2)"></span>
+                                                  </div>
+                                              </div>
+                                              <div class="breakout-item">
+                                                  <div class="breakout-message">
+                                                  Quantity
+                                                  </div>
+                                                  <div class="breakout-quantity">
+                                                      2
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="clearfix">
+                                              <h4><span class="by">posted by</span>Buyer A</h4>
+                                              <div class="people-interested pull-right">
+                                                      <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
+                                                      <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
+                                              </div>
+                                          </div>
+                                  </li>
+                                  <li>
+                                          <h3>Buyer's offer</h3>
+                                          <div>
+                                              <div class="breakout-item">
+                                                  <div class="breakout-message">
+                                                  Asking price
+                                                  </div>
+                                                  <div class="breakout-pricing">
+                                                  $<span ng-bind="((deal.original_price) - (deal.original_price/100*30)| number:2)"></span>
+                                                  </div>
+                                              </div>
+                                              <div class="breakout-item">
+                                                  <div class="breakout-message">
+                                                  Quantity
+                                                  </div>
+                                                  <div class="breakout-quantity">
+                                                      10
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="clearfix">
+                                              <h4><span class="by">posted by</span>Buyer A</h4>
+                                              <div class="people-interested pull-right">
+                                                      <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
+                                                      <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
+                                              </div>
+                                          </div>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                              <a class="btn btn-default btn-full" style="margin: .5em 0;" target="_blank"><i class="fa fa-external-link"></i> Original link</a>
+                          </div>
+                          <div class="col-md-12" style="padding: 1em;">
+                              <span class="share-deal-title">Share this deal</span>
+                              <div class="pull-right">
+                                  <a class="share-deal-link" href="#share"><i class="fa fa-envelope"></i></a>
+                                  <a class="share-deal-link" href="#share"><i class="fa fa-facebook-official"></i></a>
+                                  <a class="share-deal-link" href="#share"><i class="fa fa-twitter"></i></a>  
+                                  <a class="share-deal-link" href="#share"><i class="fa fa-pinterest"></i></a>
+                              </div>
+                          </div>
+
+                          <div class="col-md-12 col-sm-6">
+                              <a href="" data-toggle="modal" data-target="#modalMakeOffer" class="btn btn-action-deal" id="btn-make-offer"> Make Offer </a>
+                          </div>
+                          <div class="interested-button-area col-md-12 col-sm-6">
+                              <a class="btn btn-action-deal" href="checkout.html">Buy</a>
+                              <strong>*We charge the buyers account only after the goods are delivered.</strong>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-12 product-tabs">
+                  <ul class="nav nav-tabs">
+                      <li class="active"><a data-toggle="tab" href="#comments">Comments</a></li>
+                      <li><a data-toggle="tab" href="#shipping-policies">Shipping & Policies </a></li>
+                  </ul>
+
+                  <div class="tab-content">
+                      <div id="comments" class="tab-pane fade in active">
+                          <div class="product-comments">
+                              <div class="comment">
+                                  <img class="user-photo" src="assets/img/default-avatar.gif" alt="">
+                                  <div class="comment-content">
+                                      <h4>Vendor A</h4>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores officiis vero accusantium, consequatur voluptatem tenetur dolorum in nostrum. Pariatur totam, a esse eum iste eius reiciendis quibusdam sint corrupti, cum.
+                                  </div>
+                              </div>
+
+                              <div class="comment">
+                                  <img class="user-photo" src="assets/img/default-avatar.gif" alt="">
+                                  <div class="comment-content">
+                                      <h4>Vendor B</h4>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores officiis vero accusantium, consequatur voluptatem tenetur dolorum in nostrum. Pariatur totam, a esse eum iste eius reiciendis quibusdam sint corrupti, cum.
+                                  </div>
+                              </div>
+
+                              <div class="comment">
+                                  <img class="user-photo" src="assets/img/default-avatar.gif" alt="">
+                                  <div class="comment-content">
+                                      <h4>Vendor C</h4>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores officiis vero accusantium, consequatur voluptatem tenetur dolorum in nostrum. Pariatur totam, a esse eum iste eius reiciendis quibusdam sint corrupti, cum.
+                                  </div>
+                              </div>
+                          </div>
+                          <form class="product-comment-form" action="">
+                              <div class="form-group">
+                                  <label for="">Message</label>
+                                  <textarea class="form-control" name="" rows="3" placeholder="Type your message"></textarea>
+                              </div>
+                              <button class="btn btn-primary btn-product-comment">Comment</button>
+                          </form>
+                      </div>
+                      <div id="shipping-policies" class="tab-pane fade">
+                          <div class="policies-content">
+                              <h4>Payment methods</h4>
+                              <div class="payment_methods">Payment methods</div>
+                              <hr>
+                          </div>
+                          <div class="policies-content">
+                              <strong>Ready to ship in 1-3 business days.</strong>
+                          </div>
+                          <div class="policies-content">
+                              <h4>Shipping costs</h4>
+                              <div class="row">
+                                  <div class="col-md-3 col-sm-4 col-xs-12">
+                                      <div class="form-group">
+                                          <label>Shipping to</label>
+                                          <select name="" class="form-control">
+                                              <option value="">United States</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3 col-sm-4 col-xs-12">
+                                      <label>Zip or postal code</label>
+                                      <div class="form-group">
+                                          <div class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                                              <input type="text" class="form-control" placeholder="12345">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3 col-sm-4 col-xs-12">
+                                      <label>Cost</label>
+                                      <div class="cost">$6.00</div>
+                                  </div>
+                              </div>
+                              <hr>
+                          </div>
+                          <div class="policies-content">
+                              <h4>Policies</h4>
+                              <div class="policies">
+                                  <div class="policies-item">
+                                      <div class="row">
+                                          <h5 class="col-md-3 col-sm-3">Lorem title</h5>
+                                          <div class="col-md-9 col-sm-9">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic non modi suscipit dolorum, sit eum impedit voluptas tenetur. Exercitationem cupiditate soluta asperiores quibusdam aperiam beatae, doloribus ipsa quisquam autem libero.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="policies-item">
+                                      <div class="row">
+                                          <h5 class="col-md-3 col-sm-3">Lorem title</h5>
+                                          <div class="col-md-9 col-sm-9">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic non modi suscipit dolorum, sit eum impedit voluptas tenetur. Exercitationem cupiditate soluta asperiores quibusdam aperiam beatae, doloribus ipsa quisquam autem libero.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="policies-item">
+                                      <div class="row">
+                                          <h5 class="col-md-3 col-sm-3">Lorem title</h5>
+                                          <div class="col-md-9 col-sm-9">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic non modi suscipit dolorum, sit eum impedit voluptas tenetur. Exercitationem cupiditate soluta asperiores quibusdam aperiam beatae, doloribus ipsa quisquam autem libero.
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="policies-item">
+                                      <div class="row">
+                                          <h5 class="col-md-3 col-sm-3">Lorem title</h5>
+                                          <div class="col-md-9 col-sm-9">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic non modi suscipit dolorum, sit eum impedit voluptas tenetur. Exercitationem cupiditate soluta asperiores quibusdam aperiam beatae, doloribus ipsa quisquam autem libero.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+              <h2>Customers Also Viewed</h2>
+              <div class="row wrap-cards-home" ng-controller="costumersAlsoViewedController">
+                  <div ng-repeat="deal in deals" class="home-card-grid">
+                      <a class="home-card" href="#" ng-click="transferToProductPage(deal,'product.html')">
+                          <div id="preview-image" class="image-area" style="background-image: url(assets/img/product.png);"></div>
+                          <div class="content-area">
+                              <h1 ng-bind="deal.short_title"></h1>
+                              <div class="interested">
+                                  <strong ng-bind="deal.interested"></strong> <span>Buyers</span>
+                              </div>
+                              <div class="price">
+                                  <div class="clearfix original-price">
+                                      <span class="price-label">Original Price</span>    <span class="price">$<span ng-bind="deal.original_price"></span></span>
+                                  </div>
+                                  <div class="clearfix asking-price">
+                                      <span class="price-label">Asking Price</span>     <span class="price">$<span ng-bind="deal.asking_price"></span></span>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+        </div>
+
+        <div class="col-md-12" ng-controller="youViewedController">
+              <div ng-if="deals != null">
+                  <h2>You Viewed</h2>
+                  <div class="row wrap-cards-home">
+                      <div ng-repeat="deal in deals" class="home-card-grid">
+                          <a class="home-card">
+                              <div class="image-area" style="background-image: url(assets/img/product.png);">
+                                  <div class="recently-viewed">Recently Viewed</div>
+                              </div>
+                              <div class="content-area">
+                                  <h1>Item title</h1>
+                                  <div class="interested">
+                                      <strong ng-bind="deal.interested"></strong> <span>Buyers</span>
+                                  </div>
+                                  <div class="price">
+                                      <div class="clearfix original-price">
+                                          <span class="price-label">Original Price</span>    <span class="price">$<span ng-bind="deal.original_price"></span></span>
+                                      </div>
+                                      <div class="clearfix asking-price">
+                                          <span class="price-label">Asking Price</span>     <span class="price">$<span ng-bind="deal.asking_price"></span></span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+</article>

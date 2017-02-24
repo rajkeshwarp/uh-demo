@@ -1,0 +1,101 @@
+.shipping-countries-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+        flex: 1 50%;
+        max-width: 50%;
+        margin: 5px 0;
+    }
+}
+.make-offer-origin-zipcode {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    .wrapper-label {
+        margin-right: 2.3em;
+    }
+    .wrapper-input {
+        flex: 1 19em;
+        max-width: 19em;
+    }
+}
+.wrapper-shipping-service {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     .days-for-shipping {
+         padding: 1em;
+         text-align: right;
+     }
+     .days-for-shipping span {
+         display: block;
+     }
+    .wrapper-checkbox-shipping-service {
+        flex: 1 14em;
+    }
+}
+.flex-div-form-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    .btn.btn-link {
+        padding: 0 8px;
+    }
+}
+
+.panel-default>.panel-heading .badge.badge-small {
+    color: #777;
+    background-color: transparent;
+}
+
+.wrapper-item-size {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.wrapper-item-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    .form-group {
+        max-width: 10em;
+        margin: .4em 0 0 .9em;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .shipping-countries-wrapper {
+        flex-direction: column;
+        .item {
+            flex: 1;
+            max-width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .wrapper-item-inputs .form-group {
+        margin-left: 0;
+        margin-right: .9em;
+    }
+    .wrapper-item-size {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .wrapper-shipping-service {
+        .days-for-shipping {
+            width: 100%;
+            text-align: left;
+        }
+    }
+}

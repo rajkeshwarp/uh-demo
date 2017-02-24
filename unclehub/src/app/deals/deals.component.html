@@ -1,0 +1,65 @@
+<!--Middle section as ng-include-->
+<div class="middle-image">
+    <div class="container">
+        <div class="container-middle-image">
+            <span class="get-better-deal">Get a better deal than</span>
+            <div class="smaller-group">
+                <span class="list-websites">Amazon, Ebay and any other website's products.</span>
+                <span class="try-post">Post your Product’s link Today </span>
+            </div>
+            <span class="for-free">For <span>Free!</span></span>
+        </div>
+    </div>
+</div>
+
+<!--Advantages section as ng-include-->
+<div class="container">
+    <div class="row middle-image-icons">
+        <div class="col-md-4 col-sm-4 col-xs-4 middle-image-icon-container">
+            <img class="middle-image-icon" src="assets/img/free-shipping.png">
+            Free Shipping
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 middle-image-icon-container">
+            <img class="middle-image-icon" src="assets/img/warranty.png">
+            Free Warranty
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 middle-image-icon-container">
+            <img class="middle-image-icon" src="assets/img/price.png">
+            Cheapest Price
+        </div>
+    </div>
+</div>
+
+<!--Just before the footer section-->
+<div class="container">
+    <div class="row wrap-cards-home">
+        <div *ngFor="let post of posts" class="home-card-grid">
+            <a routerLink="/product" class="home-card">
+                <div class="image-area">
+                  <img [src]="domSanitizer(post.image_src)">
+                </div>
+                
+                <div class="content-area">
+                    <h1>{{post.title}}</h1>
+                    <small class="clearfix">Category: {{post.category}}</small>
+                    <div class="interested">
+                        <strong></strong><span>Buyers</span>
+                    </div>
+                    <div class="price">
+                        <div class="clearfix original-price">
+                            <span class="price-label">Original Price</span>    
+                            <span class="price">$<span>{{post.original_price}}</span></span>
+                        </div>
+                        <div class="clearfix asking-price">
+                            <span class="price-label">Asking Price</span>     
+                            <span class="price">$<span>{{post.asking_price}}</span></span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div *ngFor="let page of pages">
+            <button class="btn btn-default btn-lg btn-view-all">{{page}}</button>
+        </div>
+    </div>    
+</div>

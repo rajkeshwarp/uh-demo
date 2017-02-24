@@ -1,0 +1,99 @@
+<header class="site-header">
+    <div class="container">
+        <div class="clearfix" id="dynhead">   
+            <ul class="list-links">
+                <li class="list-links__item">
+                    <a (click)="postItModal.show()">Post It</a>
+                </li>
+                <li class="list-links__item">
+                  <a (click)="loginModal.show()" (click)="setActiveTab('register')">Register</a> 
+                </li>
+                <li class="list-links__item">
+                  <a (click)="loginModal.show()" (click)="setActiveTab('login')">Sign In</a> 
+                </li>
+                <li class="cart">
+                    <a routerLink="cart">
+                        <span class="text">Cart</span>
+                        <span class="cart-count">01</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>    
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="row">
+            <a routerLink="/deals" class="col-md-3 col-sm-3 col-xs-2 link-logo">
+                <img src="assets/img/logo.svg" class="header-hat-logo" alt="UncleHub Logo">
+                <img src="assets/img/unclehub-text.png" class="header-text-logo" alt="unclehub text" width="150px">
+            </a>
+            <div class="col-md-9 col-sm-9 col-xs-9 pull-right search-wrapper">
+                <label class="input-group search" for="input-search">
+                    <span class="ico"><i class="fa fa-search"></i></span>
+                    <input id="input-search" type="text" placeholder="Search your link and start saving...">
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-categories-links">
+        <div class="container">
+            <ul class="categories-links pull-right">
+                <li><a href="events-and-activities.html">Events & Activities</a></li>
+                <li><a href="beauty-and-spas.html">Beauty & Spas</a></li>
+                <li><a href="food-and-drink.html">Food & Drink</a></li>
+                <li><a href="electronic-and-automotive.html">Electronic & automotive</a></li>
+                <li><a href="health-and-fitness.html">Health & Fitness</a></li>
+                <li><a href="travel-and-others.html">Travel & others</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- Login and Register modal -->
+<div class="modal modal-login fade" bsModal #postItModal="bs-modal" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Post It</h4>
+              <button type="button" class="close" (click)="postItModal.hide()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <unclehub-post-it></unclehub-post-it>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login and Register modal -->
+<div class="modal modal-login fade" bsModal #loginModal="bs-modal" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" (click)="loginModal.hide()">&times;</button>
+                <tabset>
+                  <tab heading="Register" [active]="active=='register'">
+                    <unclehub-social-login></unclehub-social-login>
+                    <div class="or">
+                        <span>or</span>
+                    </div>
+                    <div class="wrapper-modal-login">
+                      <div class="container-modal-login">
+                        <unclehub-register></unclehub-register>
+                      </div>
+                    </div>                    
+                  </tab>
+                  <tab heading="Sign In" [active]="active=='login'">
+                    <unclehub-social-login></unclehub-social-login>
+                    <div class="or">
+                        <span>or</span>
+                    </div>
+                    <div class="wrapper-modal-login">
+                      <div class="container-modal-login">
+                        <unclehub-login></unclehub-login>
+                      </div>
+                    </div>                    
+                  </tab>
+                </tabset>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+.box-checkout {
+    margin: 4em 0 2em;
+    padding: 2em;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e1e3df;
+    border-radius: 4px;
+    h1 {
+        margin: 0 0 1em;
+        padding: 0;
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+    .form-control {
+        border-radius: 0;
+    }
+    label {
+        font-size: .9em;
+        font-weight: 200;
+        small {
+            color: #999;
+        }
+    }
+}
+.wrapper-box-checkout {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.input-group-addon.transparent-addon {
+    background: transparent;
+}
+.wrapper-expiration-card-date {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 13em;
+    margin-right: 15px;
+    label {
+        width: 100%;
+    }
+    .day {
+        flex: 1;
+    }
+    .year {
+        flex: 2;
+    }
+}
+.wrapper-security-code {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 13em;
+    label {
+        width: 100%;
+    }
+    .btn-question {
+        width: 2em;
+        background: none;
+        border: none;
+    }
+    .input-group {
+        width: 7em;
+    }
+}
+
+.wrapper-steps {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.wrapper-sliding-steps {
+    display: flex;
+    width: 300%;
+    margin: 0 auto;
+    transition: .3s ease-in-out;
+    will-change: transform;
+    .wrapper-box-checkout {
+        width: 100%;
+        margin: 1em;
+    }
+}

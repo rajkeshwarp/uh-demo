@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+}
+
+ul {
+	padding-left: 0;
+	list-style-position: inside;
+	span {
+		color: #999;
+	}
+}
+@import "mixins/_clearfix.scss";
+@import "components/_animations.scss";
+@import "components/_site-header.scss"; 
+@import "components/_input-group.scss";
+@import "components/_nav-list.scss";
+@import "components/_home.scss";
+@import "components/_footer.scss";
+@import "components/_menu-subnav.scss";
+@import "components/_deal-page.scss";
+@import "components/_modal.scss";
+@import "components/_categories-links.scss";
+@import "components/_btn.scss";
+@import "components/_product.scss";
+@import "components/_cart-page.scss";
+@import "components/_checkout.scss";
+@import "components/_page-box.scss";
+@import "components/_make-offer-modal.scss"

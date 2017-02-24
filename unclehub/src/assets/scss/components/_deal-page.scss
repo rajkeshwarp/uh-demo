@@ -1,0 +1,234 @@
+.deal-page {
+	.deal-subtitle {
+		color: #999	;
+		font-weight: 200;
+		font-size: 1.2em;
+		overflow: hidden;
+		a {
+			color: inherit;
+		}
+		span {
+			margin-right: .5em;
+		}
+	}
+	.product-reviews-rating {
+		margin-right: .5em;
+		float: left;
+	}
+	.deal-header-rating {
+		overflow: hidden;
+		padding: .5em 0;
+		font-size: 1.2em;
+		color: #999;
+	}
+	.deal-rating {
+		overflow: hidden;
+		padding: .5em 0;
+		font-size: 1.2em;
+		color: #999;
+	}
+	.icon-star-filled {
+		font-size: 1.2em;
+		margin-bottom: 0;
+	}
+	.tags {
+		list-style: none;
+		padding: 1em 0;
+		li {
+			display: inline-block;
+		}
+		a.btn {
+			border: 1px solid #777;
+			background: transparent;
+			color: #777;
+			transition: .2s ease-in-out;
+			&:hover,
+			&:active,
+			&:focus {
+				background: #777;
+				color: #fff;
+			}
+		}
+	}
+	.write-up {
+		h4 {
+			color: #333;
+			font-size: 1.2em;
+			font-weight: 600;
+		}
+		hr {
+			color: #e6e7e8;
+			height: 2px;
+			margin: 10px 0 20px;
+		}
+		p {
+			color: #999;
+		}
+		& > div {
+			margin-bottom: 5em;
+		}
+		.customer-reviews {
+			margin-bottom: 0;
+		}
+	}
+	.merchant-links {
+		list-style: none;
+		padding-left:0;
+	}
+	.merchant-rail {
+		h5 {
+			font-weight: 700;
+			color: #555;
+			margin: 0;
+		}
+	}
+	.highlights {
+		h4 {
+			font-size: 16px;
+		}
+	}
+}
+
+
+#deal-info {
+    border-right: 1px solid #e6e7e8;
+    margin-right: 0;
+    padding-right: 20px;
+}
+
+.product-reviews-rating {
+    zoom: 1;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    li {
+    	float: left;
+    	font-size: 16px;
+    	height: 16px;
+    	line-height: 16px;
+    	padding: 0;
+    	position: relative;
+    }
+}
+
+.ugc-star-ratings {
+    .product-reviews-rating {
+		float: left;
+		margin: 0 10px 2px 0;
+		list-style-type: none;
+    }
+
+    li {
+    	font-size: 17px;
+    	height: 17px;
+    	line-height: 17px;
+    }
+}
+
+.icon-star-filled {
+	&.full-star {
+		span {
+			color: #FFC120;
+		}
+	}
+}
+
+
+
+.tip-item {
+    clear: both;
+    min-height: 45px;
+    float: left;
+    width: 100%;
+    line-height: 20px;
+}
+.tip-item {
+    margin: 10px 0;
+}
+.tip-item .tip-featured-aspect {
+    zoom: 1;
+    padding-bottom: 8px;
+}
+.tip-item .tip-featured-aspect .aspect-text {
+    float: left;
+    color: #337AB7;
+    font-weight: 600;
+}
+.tip-item .tip-featured-aspect .aspect-count {
+    float: right;
+    color: #b8b5bb;
+    cursor: pointer;
+}
+.tip-featured-aspect {
+	@include clearfix;
+}
+.tip-text {
+	display: block;
+	float: left;
+	color: #55585b;
+}
+.user-text {
+	color: #b8b5bb;
+	display: block;
+	float: left;
+	clear: both;
+	font-size: 12px;
+	margin: 3px 0 8px;
+}
+
+.address.icon-marker-filled {
+	position: relative;
+	padding-left: 2em;
+	font-size: .95em;
+	line-height: 1.2em;
+	p {
+		margin-bottom: .2em;
+	}
+}
+
+#redemption-locations {
+	list-style: none;
+	.marker {
+		color: #fff;
+		font-size: .8em;
+		position: absolute;
+		float: left;
+		.text {
+			position: relative;
+			font-size: 1.3em;
+			z-index: 3;
+			width: 1.4em;
+			text-align: center;
+			display: block;
+			font-size: 1.2em;
+			margin-top: 1px;
+		}
+		&::before {
+			content: '';
+			background: #337AB7;
+			display: block;
+			width: 1.9em;
+			height: 1.9em;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			border-radius: 100%;
+		}
+		&::after {
+			content: '';
+			background: #337AB7;
+			display: block;
+			width: 1.3em;
+			height: 1.1em;
+			top: 10px;
+			left: 2.8px;
+			position: absolute;
+			z-index: 2;
+			transform: rotate(45deg);
+		}
+	}
+}
+.banners-product-page {
+	margin: 2em 0;
+}
