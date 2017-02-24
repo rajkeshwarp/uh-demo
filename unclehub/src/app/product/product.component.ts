@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  private step:number;
+  private offerPicked:string;
+
+  constructor() { 
+    this.step = 1;
+  }
 
   ngOnInit() {
   }
 
+
+  switchOffer( offerType ) {
+    this.offerPicked = offerType;
+  }
+
+  toStep( step ) {
+    this.step = step;
+  }
+
+  addVendorOffer() {
+    console.log('addVendorOffer');
+  }
+
+  close( modal ) {
+    modal.hide();
+    this.offerPicked = undefined;
+  }
 }

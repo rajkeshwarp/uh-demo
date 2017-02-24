@@ -1,5 +1,5 @@
 <article class="container deal-page">
-      <div id="deal-container" class="deal-container">
+      <div class="deal-container">
           
           <div ng-controller="productController" class="row">
               <div class="col-md-8">
@@ -9,17 +9,19 @@
                           <h2 ng-if="deal.category == 0">Product</h2>
                           <div class="wrapper-post-product-page">
                               <div class="post-card-now" style="display:block;">
-                                  <a class="home-card post-card" ng-click="transferToProductPage(deal, 'product.html')">
+                                  <a class="home-card post-card" (click)="transferToProductPage(deal, 'product.html')">
                                       <div class="image-area" style="background-image:url(assets/img/product.png)"></div>
                                       <div class="content-area">
                                           <h1 ng-bind="deal.title"></h1>
                                           <div class="description" ng-bind="deal.description"></div>
                                           <div class="price">
                                               <div class="clearfix original-price">
-                                                  <span class="price-label">Original Price</span>    <span class="price">$<span ng-bind="deal.original_price"></span></span>
+                                                  <span class="price-label">Original Price</span>    
+                                                  <span class="price">$<span ng-bind="deal.original_price"></span></span>
                                               </div>
                                               <div class="clearfix asking-price">
-                                                  <span class="price-label">Asking Price</span>     <span class="price">$<span ng-bind="deal.asking_price"></span></span>
+                                                  <span class="price-label">Asking Price</span>     
+                                                  <span class="price">$<span ng-bind="deal.asking_price"></span></span>
                                               </div>
                                           </div>
                                       </div>
@@ -31,145 +33,153 @@
               </div>
               <div class="col-md-4">
                   <div class="offers">
-                      <ul class="nav nav-tabs">
+                      <tabset>
+                        <tab heading="Vendor's offer">
+                            <ul class="deal-options">
+                                <li>
+                                <input id="deal-option-1" type="radio" name="deal-option" checked value="1">
+                                <label for="deal-option-1">
+                                    <h3>Vendor's offer</h3>
+                                    <div>
+                                    <div class="breakout-item">
+                                        <div class="breakout-message">
+                                        Proposed a deal for
+                                        </div>
+                                        <div class="breakout-pricing">
+                                        $<span>23</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <h4><span class="by">posted by</span>Vendor A</h4>
+                                        <div class="people-interested pull-right"><strong>45</strong> people interested <button type="button" class="btn-like-deal" href=""></button></div>
+                                    </div>
+                                </label>
+                                </li>
+                                <li>
+                                <input id="deal-option-2" type="radio" name="deal-option" value="2">
+                                <label for="deal-option-2">
+                                    <h3>Vendor's offer</h3>
+                                    <div>
+                                    <div class="breakout-item">
+                                        <div class="breakout-message">
+                                        Proposed a deal for
+                                        </div>
+                                        <div class="breakout-pricing">
+                                        $<span>12</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <small class="offer-option">Free Warranty and Free Shipping</small>
+                                        <h4><span class="by">posted by</span>Vendor B</h4>
+                                        <div class="people-interested pull-right"><strong>23</strong> people interested <button type="button" class="btn-like-deal" href=""></button></div>
+                                    </div>
+                                </label>
+                                </li>
+                            </ul>
+                        </tab>
+                        <tab heading="Buyer's offer">
+                            <ul class="deal-options">
+                                <li>
+                                    <h3>Buyer's offer</h3>
+                                    <div>
+                                        <div class="breakout-item">
+                                            <div class="breakout-message">
+                                            Asking price
+                                            </div>
+                                            <div class="breakout-pricing">
+                                            $<span>12</span>
+                                            </div>
+                                        </div>
+                                        <div class="breakout-item">
+                                            <div class="breakout-message">
+                                            Quantity
+                                            </div>
+                                            <div class="breakout-quantity">
+                                                1
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix">
+                                        <h4><span class="by">posted by</span>Buyer A</h4>
+                                        <div class="people-interested pull-right">
+                                                <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
+                                                <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
+                                        </div>
+                                    </div>
+                            </li>
+                            <li>
+                                <h3>Buyer's offer</h3>
+                                <div>
+                                    <div class="breakout-item">
+                                        <div class="breakout-message">
+                                        Asking price
+                                        </div>
+                                        <div class="breakout-pricing">
+                                        $<span ng-bind="((deal.original_price) - (deal.original_price/100*20)| number:2)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="breakout-item">
+                                        <div class="breakout-message">
+                                        Quantity
+                                        </div>
+                                        <div class="breakout-quantity">
+                                            2
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <h4><span class="by">posted by</span>Buyer A</h4>
+                                    <div class="people-interested pull-right">
+                                            <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
+                                            <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Buyer's offer</h3>
+                                <div>
+                                    <div class="breakout-item">
+                                        <div class="breakout-message">
+                                        Asking price
+                                        </div>
+                                        <div class="breakout-pricing">
+                                        $<span ng-bind="((deal.original_price) - (deal.original_price/100*30)| number:2)"></span>
+                                        </div>
+                                    </div>
+                                    <div class="breakout-item">
+                                        <div class="breakout-message">
+                                        Quantity
+                                        </div>
+                                        <div class="breakout-quantity">
+                                            10
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                    <h4><span class="by">posted by</span>Buyer A</h4>
+                                    <div class="people-interested pull-right">
+                                            <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
+                                            <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        </tab>
+                      </tabset>
+                      <!--<ul class="nav nav-tabs">
                           <li class="active"><a data-toggle="tab" href="#vendors-offer">Vendor's offer</a></li>
                           <li><a data-toggle="tab" href="#buyers-offer">Buyer's offer</a></li>
                       </ul>
                       <div class="tab-content">
                           <div id="vendors-offer" class="tab-pane fade in active">
-                                <ul id="offer-lists" class="deal-options">
-                                  <li>
-                                  <input id="deal-option-1" type="radio" name="deal-option" checked value="1">
-                                  <label for="deal-option-1">
-                                      <h3>Vendor's offer</h3>
-                                      <div>
-                                      <div class="breakout-item">
-                                          <div class="breakout-message">
-                                          Proposed a deal for
-                                          </div>
-                                          <div class="breakout-pricing">
-                                            $<span>23</span>
-                                          </div>
-                                      </div>
-                                      </div>
-                                      <div class="clearfix">
-                                          <h4><span class="by">posted by</span>Vendor A</h4>
-                                          <div class="people-interested pull-right"><strong>45</strong> people interested <button type="button" class="btn-like-deal" href=""></button></div>
-                                      </div>
-                                  </label>
-                                  </li>
-                                  <li>
-                                  <input id="deal-option-2" type="radio" name="deal-option" value="2">
-                                  <label for="deal-option-2">
-                                      <h3>Vendor's offer</h3>
-                                      <div>
-                                      <div class="breakout-item">
-                                          <div class="breakout-message">
-                                          Proposed a deal for
-                                          </div>
-                                          <div class="breakout-pricing">
-                                            $<span>12</span>
-                                          </div>
-                                      </div>
-                                      </div>
-                                      <div class="clearfix">
-                                          <small class="offer-option">Free Warranty and Free Shipping</small>
-                                          <h4><span class="by">posted by</span>Vendor B</h4>
-                                          <div class="people-interested pull-right"><strong>23</strong> people interested <button type="button" class="btn-like-deal" href=""></button></div>
-                                      </div>
-                                  </label>
-                                  </li>
-                              </ul>
+                                
                           </div>
                           <div id="buyers-offer" class="tab-pane fade in">
-                                <ul id="offer-lists" class="deal-options">
-                                  <li>
-                                          <h3>Buyer's offer</h3>
-                                          <div>
-                                              <div class="breakout-item">
-                                                  <div class="breakout-message">
-                                                  Asking price
-                                                  </div>
-                                                  <div class="breakout-pricing">
-                                                    $<span>12</span>
-                                                  </div>
-                                              </div>
-                                              <div class="breakout-item">
-                                                  <div class="breakout-message">
-                                                  Quantity
-                                                  </div>
-                                                  <div class="breakout-quantity">
-                                                      1
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="clearfix">
-                                              <h4><span class="by">posted by</span>Buyer A</h4>
-                                              <div class="people-interested pull-right">
-                                                      <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
-                                                      <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
-                                              </div>
-                                          </div>
-                                  </li>
-                                  <li>
-                                          <h3>Buyer's offer</h3>
-                                          <div>
-                                              <div class="breakout-item">
-                                                  <div class="breakout-message">
-                                                  Asking price
-                                                  </div>
-                                                  <div class="breakout-pricing">
-                                                  $<span ng-bind="((deal.original_price) - (deal.original_price/100*20)| number:2)"></span>
-                                                  </div>
-                                              </div>
-                                              <div class="breakout-item">
-                                                  <div class="breakout-message">
-                                                  Quantity
-                                                  </div>
-                                                  <div class="breakout-quantity">
-                                                      2
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="clearfix">
-                                              <h4><span class="by">posted by</span>Buyer A</h4>
-                                              <div class="people-interested pull-right">
-                                                      <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
-                                                      <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
-                                              </div>
-                                          </div>
-                                  </li>
-                                  <li>
-                                          <h3>Buyer's offer</h3>
-                                          <div>
-                                              <div class="breakout-item">
-                                                  <div class="breakout-message">
-                                                  Asking price
-                                                  </div>
-                                                  <div class="breakout-pricing">
-                                                  $<span ng-bind="((deal.original_price) - (deal.original_price/100*30)| number:2)"></span>
-                                                  </div>
-                                              </div>
-                                              <div class="breakout-item">
-                                                  <div class="breakout-message">
-                                                  Quantity
-                                                  </div>
-                                                  <div class="breakout-quantity">
-                                                      10
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          <div class="clearfix">
-                                              <h4><span class="by">posted by</span>Buyer A</h4>
-                                              <div class="people-interested pull-right">
-                                                      <button class="btn btn-unclehub btn-xs" type="button">I want this deal</button>
-                                                      <button class="btn btn-primary btn-xs" type="button">Sell to this buyer</button>
-                                              </div>
-                                          </div>
-                                  </li>
-                              </ul>
+                                
                           </div>
-                      </div>
+                      </div>-->
 
                       <div class="row">
                           <div class="col-md-12">
@@ -186,7 +196,7 @@
                           </div>
 
                           <div class="col-md-12 col-sm-6">
-                              <a href="" data-toggle="modal" data-target="#modalMakeOffer" class="btn btn-action-deal" id="btn-make-offer"> Make Offer </a>
+                              <a class="btn btn-action-deal" (click)="makeOfferModal.show()">Make Offer </a>
                           </div>
                           <div class="interested-button-area col-md-12 col-sm-6">
                               <a class="btn btn-action-deal" href="checkout.html">Buy</a>
@@ -321,7 +331,7 @@
               <h2>Customers Also Viewed</h2>
               <div class="row wrap-cards-home" ng-controller="costumersAlsoViewedController">
                   <div ng-repeat="deal in deals" class="home-card-grid">
-                      <a class="home-card" href="#" ng-click="transferToProductPage(deal,'product.html')">
+                      <a class="home-card" href="#" (click)="transferToProductPage(deal,'product.html')">
                           <div id="preview-image" class="image-area" style="background-image: url(assets/img/product.png);"></div>
                           <div class="content-area">
                               <h1 ng-bind="deal.short_title"></h1>
@@ -372,3 +382,133 @@
         </div>
     </div>
 </article>
+
+
+<!--Make an offer modal-->
+<div class="modal fade" bsModal #makeOfferModal="bs-modal" [config]="{backdrop: 'static'}">
+  <div class="modal-dialog"> 
+    <div class="wrapper-quantity" style="display: none;">
+        <form action="/" class="form-box-quantity ng-pristine ng-valid">
+            <div class="box-quantity">
+                    <button type="button" class="close">×</button>
+                    <div class="form-group">
+                        <label for="">Quantity:</label>
+                        <input name="input-quantity-box" class="form-control" type="number" autocomplete="off" required="" placeholder="Quantity">
+                    </div>
+                    <div class="form-group">
+                        <button id="apply-quantity-button" type="submit" class="btn btn-primary btn-full">Apply</button>
+                    </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" (click)="close(makeOfferModal)" class="close">&times;</button>
+        <h4 class="modal-title">Make Offer</h4>
+      </div>
+      <form class="offer-form modal-body clearfix">
+          <!--choose any offer-->
+          <div class="row" *ngIf="!offerPicked">
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" (click)="switchOffer('buyer')">I'm a buyer</button>
+                <button type="button" class="btn btn-primary" (click)="switchOffer('vendor')">I'm a vendor</button>
+            </div>
+          </div>
+          <!--If offer picked is 'buyer'-->
+          <div class="buyer-form" *ngIf="offerPicked=='buyer'">
+              <div class="flex-row">
+                  <div class="title">
+                      <label for="title">Title</label>
+                      <input type="text" class="form-control" autofocus value="Buyer's offer">
+                  </div>
+                  <div class="quantity">
+                      <label for="title">Title</label>
+                      <select class="form-control" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="others">others</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="flex-row">
+                <div class="price">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="spacer"></div>
+              </div>
+          </div>
+
+          <!--If offer picked is 'vendor'-->
+          <div class="vendor-form" *ngIf="offerPicked=='vendor'">
+
+              <div class="text-center">
+                <ul class="pagination">
+                    <li><a (click)="toStep(2)">Offer</a></li>
+                    <li><a (click)="toStep(3)">Shipping</a></li>
+                    <li><a (click)="toStep(4)">Deposit Method</a></li>
+                </ul>
+              </div>
+
+              <div class="flex-row">
+                  <div class="title">
+                      <label for="title">Title</label>
+                      <input type="text" class="form-control" autofocus value="Vendor's offer">
+                  </div>
+                  <div class="quantity">
+                      <label for="title">Title</label>
+                      <select class="form-control" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="others">others</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="flex-row">
+                <div class="price">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="tax-rates">
+                    <label><input type="checkbox" value=""> Apply tax rates</label>
+                </div>
+              </div>
+              <div class="form-group frow">
+                <label for="conditions">Conditions</label>
+                <div class="flex-row">
+                    <label class="radio-inline">
+                        <input type="radio" name="condition" checked="" required="" value="New">New
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="condition" value="Used">Used
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="condition" value="none">N/A
+                    </label>
+                </div>
+             </div>
+             <div class="form-group frow">
+                 <label><input type="checkbox" value=""> Free warranty</label>
+             </div>
+          </div>
+      </form>
+      <div class="modal-footer">
+          <div *ngIf="offerPicked">
+              <button type="button" class="btn btn-default pull-left" *ngIf="step > 1" (click)="prevStep()">
+                  <i class="fa fa-arrow-left"></i> Previous
+              </button>
+              <button type="button" class="btn btn-primary pull-right" *ngIf="step>1 && step<4" (click)="nextStep()">
+                  Continue <i class="fa fa-arrow-right"></i>
+              </button>
+              <button type="button" class="btn btn-success pull-right" (click)="addVendorOffer()" *ngIf="step==4">
+                  <i class="fa fa-check"></i> Make offer
+              </button>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>

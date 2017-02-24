@@ -46,6 +46,8 @@ export class DealsComponent implements OnInit {
   }
 
   fetchDeals() {
+    let base_url = 'https://api-unclehub.herokuapp.com';
+    // https://unclehub-api.herokuapp.com/api/posts
     return this.http.get('assets/data/deals.json')
       .map( resp => resp.json());
   }
