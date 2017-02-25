@@ -6,6 +6,10 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { ModalModule, TabsModule } from 'ng2-bootstrap';
 
+import { PipesModule } from './common/pipes/pipes.module';
+import { HttpClient } from './common/http.base';
+import { Broadcaster } from './common/broadcaster';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -18,7 +22,6 @@ import { SocialLoginComponent } from './social-login/social-login.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PostItComponent } from './post-it/post-it.component';
-import { DomSafePipe } from './safe.pipe';
 import { ProductComponent } from './product/product.component';
 
 @NgModule({
@@ -33,7 +36,6 @@ import { ProductComponent } from './product/product.component';
     LoginComponent,
     RegisterComponent,
     PostItComponent,
-    DomSafePipe,
     ProductComponent
   ],
   imports: [
@@ -44,10 +46,11 @@ import { ProductComponent } from './product/product.component';
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
+    PipesModule,
     ModalModule.forRoot(),
     TabsModule.forRoot()
   ],
-  providers: [],
+  providers: [ HttpClient, Broadcaster ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

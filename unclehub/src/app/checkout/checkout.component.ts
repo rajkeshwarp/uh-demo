@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'unclehub-checkout',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+
+  @ViewChild('translate') translate:ElementRef;
+  @ViewChild('stepItem') stepItem:ElementRef;
+
+  private translatePx:number;
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    this.translatePx = 0;
+  }
+
+  next() {
+    this.translatePx += this.stepItem.nativeElement.offsetWidth + 28;
+    this.translate.nativeElement.style.transform = `translate(-${this.translatePx}px)`;
   }
 
 }

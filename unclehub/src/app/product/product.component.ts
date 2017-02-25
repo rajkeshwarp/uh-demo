@@ -26,6 +26,17 @@ export class ProductComponent implements OnInit {
     this.step = step;
   }
 
+  prevStep() {
+    this.step -= 1;
+    if(this.step === 1) {
+      this.offerPicked = undefined;
+    }
+  }
+
+  nextStep() {
+    this.step += 1;
+  }
+
   addVendorOffer() {
     console.log('addVendorOffer');
   }

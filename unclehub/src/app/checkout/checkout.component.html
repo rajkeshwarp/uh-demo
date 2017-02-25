@@ -1,7 +1,7 @@
 <div class="container">
     <div class="wrapper-steps">
-        <div class="wrapper-sliding-steps">
-            <div class="wrapper-box-checkout">
+        <div #translate class="wrapper-sliding-steps">
+            <div #stepItem class="wrapper-box-checkout">
                 <div class="box-checkout">
                     <h1>Enter your shipping address</h1>
                     <div class="form-group">
@@ -349,7 +349,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-success btn-full btn-next-step">Continue</button>
+                <button class="btn btn-success btn-full btn-next-step" (click)="next()">Continue</button>
             </div>
 
             <div class="wrapper-box-checkout">
@@ -437,7 +437,7 @@
                         <input type="text" class="form-control">
                     </div>
                 </div>
-                <button class="btn btn-success btn-full btn-next-step">Continue</button>
+                <button class="btn btn-success btn-full btn-next-step" (click)="next()">Continue</button>
             </div>
 
             <div class="wrapper-box-checkout">
@@ -447,7 +447,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia eaque voluptates ad impedit dolorum, commodi iusto dolorem sunt est temporibus perspiciatis nulla nam eius deleniti dolor in et, explicabo voluptatibus.
                     </p>
                 </div>
-                <a class="btn btn-unclehub btn-full" href="/">Keep shopping</a>
+                <a class="btn btn-unclehub btn-full" routerLink="/deals">Keep shopping</a>
             </div>
         </div>
     </div>
